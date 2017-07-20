@@ -43,7 +43,7 @@ describe('GET /users는', () => {
                 .end((err, res) => {
                     res.body.should.have.property('id', 1);
                     done();
-                })
-         })
-     })
-})
+                });
+         });
+     });
+});
