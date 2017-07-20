@@ -28,6 +28,12 @@ app.get('/users/:id', function(req, res) {
     res.json(user);
 });
 
+app.delete('/users/:id', function(req, res) {
+    const id = parseInt(req.params.id, 10);
+    users = users.filter(user => user.id !== id);
+    res.status(204).end();
+});
+
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });

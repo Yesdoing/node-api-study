@@ -71,6 +71,6 @@ describe('GET /users/1', () => {
                 .delete('/users/1')
                 .expect(204)
                 .end(done);
-        })
-    })
-})
+        });
+    });
+});
