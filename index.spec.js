@@ -88,6 +88,12 @@ describe('POST /users', () => {
     describe('성공시', () => {
         let name = 'daniel',
             body;
+
+        /*
+            mocha에 내장된 before함수
+            테스트가 실행되기 전에 미리 실행하는 코드
+            비동기로 처리 되지 않는다.
+        */
         before(done=> {
             request(app)
                 .post('/users')
