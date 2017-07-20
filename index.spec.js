@@ -124,8 +124,8 @@ describe('POST /users', () => {
         it('name이 중복일 경우 409를 반환한다.', (done) => {
             request(app)
                 .post('/users')
-                .send({name: 'alice'})
-                .expect(400)
+                .send({name: 'daniel'})
+                .expect(409)
                 .end(done)
         })
     })
