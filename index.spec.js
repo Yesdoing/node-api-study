@@ -64,7 +64,7 @@ describe('GET /users는', () => {
      });
 });
 
-describe('GET /users/1', () => {
+describe('DELETE /users/1', () => {
     describe('성공시', () => {
         it('204를 응답한다.', (done) => {
             request(app)
