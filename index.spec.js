@@ -144,4 +144,27 @@ describe('PUT /users/:id', ()=> {
                 })
         })
     })
+
+    describe('실패 시', ()=> {
+        it('정수가 아닌 id일 경우 400 응답', (done) => {
+            request(app)
+                .put('/users/one')
+                .expect(400)
+                .end(done);
+        })
+        it('name이 없는 경우 400 응답', (done) => {
+            request(app)
+                .put('/users/1')
+                .send({})
+                .expect(400)
+                .end(done);
+        })
+        it('이름이 중복인 경우 404 응답', (done) => {
+            request(app)
+                .put('/users/3')
+                .send({name: 'bek'})
+                .expect(409)
+                .end(done);
+        })
+    })
 })
