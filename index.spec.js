@@ -159,10 +159,17 @@ describe('PUT /users/:id', ()=> {
                 .expect(400)
                 .end(done);
         })
+        it('없는 유저일 경우 404 응답', (done) => {
+            request(app)
+                .put('/users/999')
+                .send({name: 'foo'})
+                .expect(404)
+                .end(done);
+        })
         it('이름이 중복인 경우 404 응답', (done) => {
             request(app)
                 .put('/users/3')
-                .send({name: 'bek'})
+                .send({name: 'beak'})
                 .expect(409)
                 .end(done);
         })
